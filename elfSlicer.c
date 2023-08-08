@@ -38,21 +38,8 @@ int main(int argc, char** argv){
     
     ek = elf_kind(e);   // determines what type of elf file (ar archive vs. ELF)
 
-    switch(ek) {    // assigns string to type of elf file opened
-    case ELF_K_AR:
-        k = "ar(1) archive";
-        break;
-    case ELF_K_ELF:
-        k = "elf object";
-        break;
-    case ELF_K_NONE:
-        k = "data";
-        break;
-    default:
-        k = "unrecognized";
-    }
 
-    printf("%s: %s\n", argv[1], k);     //prints output, type of file opened
+
     
     elf_end(e); // release handle resources
     close(fd);
